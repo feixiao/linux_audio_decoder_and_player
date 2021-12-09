@@ -10,6 +10,7 @@ int main(int argc, char* argv[]){
   }
   FFmpegDecoder decoder(2, AV_SAMPLE_FMT_S16, 44100);
   decoder.openFile(argv[1]);
+
   AlsaPlayer player(2, SND_PCM_FORMAT_S16_LE, 44100);
   player.setDecoder(&decoder);
   player.play();
